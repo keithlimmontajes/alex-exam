@@ -10,7 +10,5 @@ export const courseRouter = createTRPCRouter({
       };
     }),
 
-  getAll: publicProcedure.query(({ ctx }) => {
-    return ctx.prisma.course.findMany();
-  }),
+
 });
