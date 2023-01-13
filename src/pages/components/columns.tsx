@@ -1,8 +1,8 @@
-import { Badge, Button } from "antd";
+/* eslint-disable */
+import { Badge } from "antd";
 import { DeleteFilled, EditFilled } from "@ant-design/icons";
 
-/* eslint-disable */
-export const columns = (remove: any, setData: any, setIsEdit: any) => [
+const columns = (remove: any, setData: any, setIsEdit: any) => [
   {
     title: "CAR",
     dataIndex: "car",
@@ -53,3 +53,5 @@ export const columns = (remove: any, setData: any, setIsEdit: any) => [
     },
   },
 ];
+
+export { columns };
