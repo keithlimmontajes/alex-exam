@@ -1,7 +1,13 @@
+/* eslint-disable */
 import React, { useEffect, useState } from "react";
 import { Modal, Input } from "antd";
 
-const App: React.FC = ({ update, isModalOpen, setIsModalOpen, data }: any) => {
+const App: React.FC<any> = ({
+  update,
+  isModalOpen,
+  setIsModalOpen,
+  data,
+}: any) => {
   const [fields, setFields] = useState({
     car: "",
     color: "",

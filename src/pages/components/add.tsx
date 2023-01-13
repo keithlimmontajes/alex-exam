@@ -1,7 +1,8 @@
+/* eslint-disable */
 import React, { useState } from "react";
 import { Modal, Input } from "antd";
 
-const AddModal: React.FC = (props: any) => {
+const AddModal: React.FC<any> = (props: any) => {
   const { add, isModalOpen, setIsModalOpen } = props;
 
   const [fields, setFields] = useState<any>({

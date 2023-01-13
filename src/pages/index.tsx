@@ -1,3 +1,4 @@
+// eslint-disable-file
 import { type NextPage } from "next";
 import { useEffect, useState } from "react";
 
