@@ -17,7 +17,7 @@ const Home: NextPage = () => {
   const [isModalOpen, setIsModalOpen] = useState<any>(false);
 
   useEffect(() => {
-    let getAll = firebase
+    const getAll = firebase
       .firestore()
       .collection("votes")
       .onSnapshot((snaps) => {
