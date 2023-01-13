@@ -1,7 +1,7 @@
 import { type NextPage } from "next";
 import { useEffect, useState } from "react";
 
-import { Table, Row, Col, Button } from "antd";
+import { Table, Col, Button } from "antd";
 import { columns } from "./components/columns";
 
 import firebase from "../../firebase/clientApp";

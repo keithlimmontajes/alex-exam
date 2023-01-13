@@ -16,7 +16,7 @@ export const columns = (remove: any, setData: any, setIsEdit: any) => [
     title: "COLOR",
     dataIndex: "color",
     key: "3",
-    render: (a) => {
+    render: (a: any) => {
       return (
         <>
           <Badge color={a} /> &nbsp;
