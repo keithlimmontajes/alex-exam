@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Modal, Input } from "antd";
 
-const App: React.FC = ({ add, isModalOpen, setIsModalOpen }: any) => {
-  const [fields, setFields] = useState({
+const AddModal: React.FC = (props: any) => {
+  const { add, isModalOpen, setIsModalOpen } = props;
+
+  const [fields, setFields] = useState<any>({
     car: "",
     color: "",
     model: "",
@@ -67,4 +69,4 @@ const App: React.FC = ({ add, isModalOpen, setIsModalOpen }: any) => {
   );
 };
 
-export default App;
+export default AddModal;

@@ -67,9 +67,9 @@ const Home: NextPage = () => {
         />
 
         <AddModal
-          add={add}
           isModalOpen={isModalOpen}
           setIsModalOpen={setIsModalOpen}
+          add={add}
         />
 
         <EditModal
