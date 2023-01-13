@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Modal, Input } from "antd";
 
 const AddModal: React.FC<any> = (props: any) => {
@@ -7,9 +7,6 @@ const AddModal: React.FC<any> = (props: any) => {
 
   const [fields, setFields] = useState<any>({
     car: "",
-    color: "",
-    model: "",
-    speed: "",
   });
 
   const handleOk = () => {
@@ -25,10 +22,14 @@ const AddModal: React.FC<any> = (props: any) => {
     setFields({ ...fields, [name]: value });
   };
 
+  useEffect(() => {
+    setFields({ car: "" });
+  }, []);
+
   return (
     <>
       <Modal
-        title="Add Car"
+        title="Add Task"
         onOk={handleOk}
         open={isModalOpen}
         onCancel={handleCancel}
@@ -36,33 +37,12 @@ const AddModal: React.FC<any> = (props: any) => {
         afterClose={() => {
           setFields({
             car: "",
-            color: "",
-            model: "",
-            speed: "",
           });
         }}
       >
         <Input
           onChange={(e) => onChangeValues("car", e.target.value)}
-          placeholder="Input here car.."
-          style={{ margin: 10 }}
-        />
-
-        <Input
-          onChange={(e) => onChangeValues("color", e.target.value)}
-          placeholder="Input here color.."
-          style={{ margin: 10 }}
-        />
-
-        <Input
-          onChange={(e) => onChangeValues("model", e.target.value)}
-          placeholder="Input here model.."
-          style={{ margin: 10 }}
-        />
-
-        <Input
-          onChange={(e) => onChangeValues("speed", e.target.value)}
-          placeholder="Input here speed.."
+          placeholder="Input Task here.."
           style={{ margin: 10 }}
         />
       </Modal>

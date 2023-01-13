@@ -50,14 +50,7 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     if (search.length) {
-      const filtered = cars.filter(
-        (item) =>
-          item?.car.includes(search) ||
-          item?.model.includes(search) ||
-          item?.color.includes(search) ||
-          item?.speed.includes(search)
-      );
-
+      const filtered = cars.filter((item) => item?.car.includes(search));
       setFiltered(filtered);
     }
   }, [search]);

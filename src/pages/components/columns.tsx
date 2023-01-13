@@ -5,40 +5,24 @@ import { DeleteFilled, EditFilled } from "@ant-design/icons";
 
 const columns = (remove: any, setData: any, setIsEdit: any) => [
   {
-    title: "CAR",
+    title: "",
+    dataIndex: "",
+    key: "2",
+    width: 50,
+    render: (_a, _b, c) => {
+      return c + 1;
+    },
+  },
+  {
+    title: "TASK's",
     dataIndex: "car",
     key: "1",
     sorter: (a, b) => a.car.length - b.car.length,
   },
   {
-    title: "MODEL",
-    dataIndex: "model",
-    key: "2",
-    sorter: (a, b) => a.model.length - b.model.length,
-  },
-  {
-    title: "COLOR",
-    dataIndex: "color",
-    key: "3",
-    sorter: (a, b) => a.color.length - b.color.length,
-    render: (a: any) => {
-      return (
-        <>
-          <Badge color={a} /> &nbsp;
-          {a}
-        </>
-      );
-    },
-  },
-  {
-    title: "SPEED",
-    dataIndex: "speed",
-    key: "4",
-    sorter: (a, b) => a.speed - b.speed,
-  },
-  {
     title: "",
     dataIndex: "id",
+    width: 100,
     render: (a: any, object: any) => {
       return (
         <>

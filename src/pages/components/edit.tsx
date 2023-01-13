@@ -10,9 +10,6 @@ const App: React.FC<any> = ({
 }: any) => {
   const [fields, setFields] = useState({
     car: "",
-    color: "",
-    model: "",
-    speed: "",
   });
 
   const handleOk = () => {
@@ -38,7 +35,7 @@ const App: React.FC<any> = ({
   return (
     <>
       <Modal
-        title="Edit Car"
+        title="Edit Task"
         onOk={handleOk}
         open={isModalOpen}
         onCancel={handleCancel}
@@ -46,29 +43,8 @@ const App: React.FC<any> = ({
       >
         <Input
           onChange={(e) => onChangeValues("car", e.target.value)}
-          placeholder="Input here car.. "
+          placeholder="Input Task here.. "
           value={fields?.car}
-          style={{ margin: 10 }}
-        />
-
-        <Input
-          onChange={(e) => onChangeValues("color", e.target.value)}
-          placeholder="Input here color.."
-          value={fields?.color}
-          style={{ margin: 10 }}
-        />
-
-        <Input
-          onChange={(e) => onChangeValues("model", e.target.value)}
-          placeholder="Input here model.."
-          value={fields?.model}
-          style={{ margin: 10 }}
-        />
-
-        <Input
-          onChange={(e) => onChangeValues("speed", e.target.value)}
-          placeholder="Input here speed.."
-          value={fields?.speed}
           style={{ margin: 10 }}
         />
       </Modal>
