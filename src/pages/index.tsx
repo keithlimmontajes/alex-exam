@@ -3,7 +3,7 @@ import { type NextPage } from "next";
 import { useEffect, useState } from "react";
 
 import { Table, Col, Button } from "antd";
-import { columns } from "./components/columns";
+import columns from "./components/columns";
 
 import firebase from "../../firebase/clientApp";
 import AddModal from "./components/add";

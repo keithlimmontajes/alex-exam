@@ -1,4 +1,5 @@
 /* eslint-disable */
+import React from "react";
 import { Badge } from "antd";
 import { DeleteFilled, EditFilled } from "@ant-design/icons";
 
@@ -54,4 +55,4 @@ const columns = (remove: any, setData: any, setIsEdit: any) => [
   },
 ];
 
-export { columns };
+export default columns;
