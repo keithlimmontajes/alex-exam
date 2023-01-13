@@ -8,16 +8,19 @@ const columns = (remove: any, setData: any, setIsEdit: any) => [
     title: "CAR",
     dataIndex: "car",
     key: "1",
+    sorter: (a, b) => a.car.length - b.car.length,
   },
   {
     title: "MODEL",
     dataIndex: "model",
     key: "2",
+    sorter: (a, b) => a.model.length - b.model.length,
   },
   {
     title: "COLOR",
     dataIndex: "color",
     key: "3",
+    sorter: (a, b) => a.color.length - b.color.length,
     render: (a: any) => {
       return (
         <>
@@ -31,6 +34,7 @@ const columns = (remove: any, setData: any, setIsEdit: any) => [
     title: "SPEED",
     dataIndex: "speed",
     key: "4",
+    sorter: (a, b) => a.speed - b.speed,
   },
   {
     title: "",

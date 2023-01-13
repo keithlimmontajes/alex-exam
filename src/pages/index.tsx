@@ -2,7 +2,7 @@
 import { type NextPage } from "next";
 import { useEffect, useState } from "react";
 
-import { Table, Col, Button } from "antd";
+import { Table, Col, Button, Input } from "antd";
 import columns from "./components/columns";
 
 import firebase from "../../firebase/clientApp";
@@ -13,7 +13,9 @@ const db = firebase.firestore();
 
 const Home: NextPage = () => {
   const [cars, setCars] = useState<any>([]);
+  const [filtered, setFiltered] = useState([]);
   const [data, setData] = useState<any>({});
+  const [search, setSearch] = useState("");
   const [isEdit, setIsEdit] = useState<any>(false);
   const [isModalOpen, setIsModalOpen] = useState<any>(false);
 
@@ -33,9 +35,7 @@ const Home: NextPage = () => {
       });
 
     return () => {
-      if (getAll) {
-        getAll();
-      }
+      if (getAll) getAll();
     };
   }, []);
 
@@ -48,6 +48,20 @@ const Home: NextPage = () => {
   const remove = async (id: string) =>
     await db.collection("votes").doc(id).delete();
 
+  useEffect(() => {
+    if (search.length) {
+      const filtered = cars.filter(
+        (item) =>
+          item?.car.includes(search) ||
+          item?.model.includes(search) ||
+          item?.color.includes(search) ||
+          item?.speed.includes(search)
+      );
+
+      setFiltered(filtered);
+    }
+  }, [search]);
+
   return (
     <div className="p-10">
       <Col span={12} offset={6}>
@@ -58,10 +72,19 @@ const Home: NextPage = () => {
           >
             ADD
           </Button>
+
+          <Input.Search
+            style={{ maxWidth: 300, marginLeft: "60%" }}
+            placeholder="Search here.."
+            onChange={(e) => {
+              const value = e.target.value;
+              setSearch(value);
+            }}
+          />
         </div>
 
         <Table
-          dataSource={cars}
+          dataSource={search.length ? filtered : cars}
           className="table-ant-design"
           columns={columns(remove, setData, setIsEdit)}
           style={{ border: "6px groove #dbd9d9" }}
